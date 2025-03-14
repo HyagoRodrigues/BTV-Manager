@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../../../public/bg-login.webp');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ring {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #2E2E3A;
+  transition: 0.5s;
+}
+
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+
+@keyframes animate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes animate2 {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.login {
+  position: absolute;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputBx {
+  position: relative;
+  width: 100%;
+}
+
+.inputBx input {
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #2E2E3A;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #A0A0B0;
+  box-shadow: none;
+  outline: none;
+  transition: .5s ease;
+}
+
+.inputBx input:focus {
+  border-color: #00FFFF;
+}
+
+.inputBx input[type="submit"] {
+  background: linear-gradient(45deg, #8A2BE2, #FF00FF);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
+.inputBx input[type="submit"]:hover {
+  background: linear-gradient(45deg, #FF00FF, #8A2BE2);
+}
+
+.inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
